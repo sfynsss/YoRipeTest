@@ -45,46 +45,5 @@ Start the local development server
 
 You can now access postman, login using users in database seeder
 
-## Route List
-+--------+----------+---------------------+------+------------------------------------------------------------+------------------------------------------+
-| Domain | Method   | URI                 | Name | Action                                                     | Middleware                               |
-+--------+----------+---------------------+------+------------------------------------------------------------+------------------------------------------+
-|        | GET|HEAD | /                   |      | Closure                                                    | web                                      |
-|        | POST     | api/create-posts    |      | App\Http\Controllers\API\PostsController@store             | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        | POST     | api/create-users    |      | App\Http\Controllers\API\UsersController@store             | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate         |
-|        |          |                     |      |                                                            | App\Http\Middleware\IsAdmin              |
-|        | POST     | api/delete-posts    |      | App\Http\Controllers\API\PostsController@delete            | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        | POST     | api/delete-users    |      | App\Http\Controllers\API\UsersController@delete            | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate         |
-|        |          |                     |      |                                                            | App\Http\Middleware\IsAdmin              |
-|        | POST     | api/login           |      | App\Http\Controllers\API\AuthController@login              | api                                      |
-|        | POST     | api/logout          |      | App\Http\Controllers\API\AuthController@logout             | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        | GET|HEAD | api/posts           |      | App\Http\Controllers\API\PostsController@index             | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        | GET|HEAD | api/posts/{id}      |      | App\Http\Controllers\API\PostsController@show              | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        | GET|HEAD | api/profile         |      | Closure                                                    | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        | POST     | api/register        |      | App\Http\Controllers\API\AuthController@register           | api                                      |
-|        | POST     | api/update-posts    |      | App\Http\Controllers\API\PostsController@update            | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        | POST     | api/update-users    |      | App\Http\Controllers\API\UsersController@update            | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate         |
-|        |          |                     |      |                                                            | App\Http\Middleware\IsAdmin              |
-|        | GET|HEAD | api/users           |      | App\Http\Controllers\API\UsersController@index             | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate         |
-|        |          |                     |      |                                                            | App\Http\Middleware\IsAdmin              |
-|        | GET|HEAD | api/users/{id}      |      | App\Http\Controllers\API\UsersController@show              | api                                      |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate:sanctum |
-|        |          |                     |      |                                                            | App\Http\Middleware\Authenticate         |
-|        |          |                     |      |                                                            | App\Http\Middleware\IsAdmin              |
-|        | GET|HEAD | sanctum/csrf-cookie |      | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                      |
-+--------+----------+---------------------+------+------------------------------------------------------------+------------------------------------------+
+See all the routes
+    php artisan route:list
